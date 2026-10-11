@@ -1,0 +1,197 @@
+{
+  "pairs": [
+    {
+      "a": "aspirin",
+      "b": "ibuprofen",
+      "severity": "major",
+      "description": "Concurrent use may increase bleeding risk due to additive antiplatelet and NSAID effects. Aspirin's cardioprotective effects may be reduced.",
+      "suggest": [
+        "acetaminophen"
+      ]
+    },
+    {
+      "a": "ibuprofen",
+      "b": "metformin",
+      "severity": "moderate",
+      "description": "NSAIDs may reduce renal function, monitor metformin accumulation risk and potential for lactic acidosis.",
+      "suggest": [
+        "acetaminophen"
+      ]
+    },
+    {
+      "a": "acetaminophen",
+      "b": "metformin",
+      "severity": "minor",
+      "description": "No significant interaction known. Safe to use together.",
+      "suggest": []
+    },
+    {
+      "a": "aspirin",
+      "b": "lisinopril",
+      "severity": "moderate",
+      "description": "Aspirin may reduce the antihypertensive effect of ACE inhibitors. Monitor blood pressure closely.",
+      "suggest": []
+    },
+    {
+      "a": "lisinopril",
+      "b": "ibuprofen",
+      "severity": "major",
+      "description": "NSAIDs may reduce effectiveness of ACE inhibitors and increase risk of renal impairment. Avoid if possible.",
+      "suggest": [
+        "acetaminophen"
+      ]
+    },
+    {
+      "a": "atorvastatin",
+      "b": "amoxicillin",
+      "severity": "minor",
+      "description": "No significant interaction. Safe to use together.",
+      "suggest": []
+    },
+    {
+      "a": "omeprazole",
+      "b": "metformin",
+      "severity": "minor",
+      "description": "Omeprazole may slightly increase metformin levels. Monitor for hypoglycemia.",
+      "suggest": []
+    },
+    {
+      "a": "levothyroxine",
+      "b": "omeprazole",
+      "severity": "moderate",
+      "description": "PPIs may decrease levothyroxine absorption. Take levothyroxine 4 hours before omeprazole.",
+      "suggest": []
+    },
+    {
+      "a": "metoprolol",
+      "b": "amlodipine",
+      "severity": "moderate",
+      "description": "Combined use may cause excessive blood pressure lowering and bradycardia. Monitor vital signs.",
+      "suggest": []
+    },
+    {
+      "a": "gabapentin",
+      "b": "hydrochlorothiazide",
+      "severity": "minor",
+      "description": "No significant interaction. Safe to use together.",
+      "suggest": []
+    },
+    {
+      "a": "sertraline",
+      "b": "aspirin",
+      "severity": "major",
+      "description": "SSRIs with aspirin increase bleeding risk. Monitor for bruising, bleeding, or gastrointestinal symptoms.",
+      "suggest": [
+        "acetaminophen"
+      ]
+    },
+    {
+      "a": "sertraline",
+      "b": "ibuprofen",
+      "severity": "major",
+      "description": "SSRIs combined with NSAIDs significantly increase bleeding risk, especially GI bleeding.",
+      "suggest": [
+        "acetaminophen"
+      ]
+    },
+    {
+      "a": "lisinopril",
+      "b": "hydrochlorothiazide",
+      "severity": "minor",
+      "description": "Often prescribed together. No significant adverse interaction. Monitor potassium and blood pressure.",
+      "suggest": []
+    },
+    {
+      "a": "atorvastatin",
+      "b": "amlodipine",
+      "severity": "moderate",
+      "description": "Amlodipine increases atorvastatin levels, increasing risk of muscle toxicity. Use lower statin doses.",
+      "suggest": []
+    },
+    {
+      "a": "metformin",
+      "b": "hydrochlorothiazide",
+      "severity": "moderate",
+      "description": "Thiazides may impair glucose control. Monitor blood glucose more frequently.",
+      "suggest": []
+    },
+    {
+      "a": "levothyroxine",
+      "b": "sertraline",
+      "severity": "minor",
+      "description": "Sertraline may increase levothyroxine requirements. Monitor TSH levels.",
+      "suggest": []
+    },
+    {
+      "a": "amoxicillin",
+      "b": "metformin",
+      "severity": "minor",
+      "description": "No significant interaction. Safe to use together.",
+      "suggest": []
+    },
+    {
+      "a": "gabapentin",
+      "b": "metoprolol",
+      "severity": "minor",
+      "description": "No significant interaction. Safe to use together.",
+      "suggest": []
+    },
+    {
+      "a": "omeprazole",
+      "b": "atorvastatin",
+      "severity": "minor",
+      "description": "No significant interaction. Safe to use together.",
+      "suggest": []
+    },
+    {
+      "a": "aspirin",
+      "b": "metformin",
+      "severity": "minor",
+      "description": "No significant interaction. Often used together in diabetes management.",
+      "suggest": []
+    }
+  ],
+  "alternatives": {
+    "ibuprofen": [
+      "acetaminophen",
+      "celecoxib"
+    ],
+    "aspirin": [
+      "acetaminophen"
+    ],
+    "metformin": [],
+    "acetaminophen": [],
+    "amoxicillin": [],
+    "lisinopril": [
+      "losartan",
+      "valsartan"
+    ],
+    "atorvastatin": [
+      "pravastatin",
+      "rosuvastatin"
+    ],
+    "omeprazole": [
+      "famotidine",
+      "ranitidine"
+    ],
+    "levothyroxine": [],
+    "metoprolol": [
+      "carvedilol",
+      "bisoprolol"
+    ],
+    "amlodipine": [
+      "nifedipine",
+      "diltiazem"
+    ],
+    "gabapentin": [
+      "pregabalin"
+    ],
+    "hydrochlorothiazide": [
+      "chlorthalidone"
+    ],
+    "sertraline": [
+      "escitalopram",
+      "fluoxetine"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-12 col-lg-8 mx-auto">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">💊 Your Medications</h5>
+                <span class="badge bg-white text-primary fs-6">{{ medications|length if medications else 0 }}
+                    Total</span>
+            </div>
+            <div class="card-body">
+                {% if medications and medications|length > 0 %}
+                <div class="medication-list mb-4">
+                    {% for med in medications %}
+                    <div class="medication-item">
+                        <div>
+                            <strong class="d-block">{{ med.name }}</strong>
+                            <small class="text-muted">💊 {{ med.dose if med.dose else 'No dose specified' }}</small>
+                        </div>
+                        <button class="btn btn-danger btn-sm" data-index="{{ loop.index0 }}">🗑️ Remove</button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-5 text-muted">
+                    <h4>📋 No medications yet</h4>
+                    <p>Add your first medication below to get started</p>
+                </div>
+                {% endif %}
+
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h6 class="mb-3">➕ Add New Medication</h6>
+                        <form id="add-med-form" class="row g-3">
+                            <div class="col-md-6">
+                                <input class="form-control form-control-lg" type="text" name="name"
+                                    placeholder="Medication name" required />
+                            </div>
+                            <div class="col-md-4">
+                                <input class="form-control form-control-lg" type="text" name="dose"
+                                    placeholder="Dose (e.g., 100mg)" />
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-success btn-lg w-100" type="submit">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('add-med-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const payload = { name: form.name.value, dose: form.dose.value };
+        const resp = await fetch('/api/add-medication', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        const data = await resp.json();
+        if (data.error) { alert('Error: ' + data.error); return; }
+        location.reload();
+    });
+</script>
+{% endblock %}

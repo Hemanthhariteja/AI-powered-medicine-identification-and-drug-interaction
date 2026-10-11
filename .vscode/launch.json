@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Flask: Run Medicine AI",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}\\run.py",
+            "console": "integratedTerminal",
+            "env": {
+                "FLASK_ENV": "development"
+            }
+        },
+        {
+            "name": "Pytest All",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "-q"
+            ],
+            "console": "integratedTerminal"
+        }
+    ]
+}

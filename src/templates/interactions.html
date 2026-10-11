@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row g-4">
+    <div class="col-12 col-lg-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0">🔄 Session Medications</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Check interactions among medications in your current session.</p>
+                <button id="btn-check-interactions" class="btn btn-primary btn-lg w-100 mb-3">
+                    🔍 Check Interactions
+                </button>
+                <div id="interaction-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0">✍️ Manual Check</h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Enter specific medications to check their interactions.</p>
+                <form method="post">
+                    <div class="mb-3">
+                        <label for="drugs" class="form-label">Medication Names</label>
+                        <input type="text" name="drugs" id="drugs" class="form-control form-control-lg"
+                            placeholder="Aspirin, Ibuprofen, Metformin" />
+                        <small class="form-text text-muted">Separate with commas</small>
+                    </div>
+                    <button class="btn btn-success btn-lg w-100" type="submit">🔍 Check Interactions</button>
+                </form>
+
+                {% if result %}
+                <div class="mt-4">
+                    {% if result.error %}
+                    <div class="alert alert-danger">
+                        <strong>Error:</strong> {{ result.error }}
+                    </div>
+                    {% else %}
+                    <h6 class="mb-3">Interaction Results:</h6>
+                    {% for pair, desc in result.items() %}
+                    {% set severity_class = 'warning' %}
+                    {% if 'major' in desc.lower() %}
+                    {% set severity_class = 'danger' %}
+                    {% elif 'moderate' in desc.lower() %}
+                    {% set severity_class = 'warning' %}
+                    {% elif 'minor' in desc.lower() or 'no' in desc.lower() %}
+                    {% set severity_class = 'info' %}
+                    {% endif %}
+                    <div class="alert alert-{{ severity_class }} mb-2">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <strong>{{ pair }}</strong>
+                                <p class="mb-0 mt-2 small">{{ desc }}</p>
+                            </div>
+                            {% if 'major' in desc.lower() %}
+                            <span class="badge bg-danger">Major</span>
+                            {% elif 'moderate' in desc.lower() %}
+                            <span class="badge bg-warning text-dark">Moderate</span>
+                            {% elif 'minor' in desc.lower() %}
+                            <span class="badge bg-info">Minor</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if medications and medications|length >= 2 %}
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="alert alert-info">
+            <strong>💡 Tip:</strong> You have {{ medications|length }} medications in your session. Click "Check
+            Interactions" to analyze them.
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

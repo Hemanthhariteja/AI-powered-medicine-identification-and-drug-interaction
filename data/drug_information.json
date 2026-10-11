@@ -1,0 +1,465 @@
+{
+    "medications": [
+        {
+            "name": "Aspirin",
+            "genericName": "Acetylsalicylic Acid",
+            "class": "NSAID / Antiplatelet",
+            "uses": [
+                "Pain relief",
+                "Fever reduction",
+                "Anti-inflammatory",
+                "Heart attack prevention",
+                "Stroke prevention"
+            ],
+            "commonDoses": [
+                "81mg (low-dose)",
+                "325mg",
+                "500mg"
+            ],
+            "sideEffects": [
+                "Stomach upset",
+                "Heartburn",
+                "Increased bleeding risk",
+                "Allergic reactions"
+            ],
+            "warnings": [
+                "Avoid in children with viral infections (Reye's syndrome risk)",
+                "Do not take if allergic to NSAIDs",
+                "Consult doctor if pregnant or breastfeeding"
+            ],
+            "foodInteractions": [
+                "Avoid alcohol (increases bleeding risk)"
+            ]
+        },
+        {
+            "name": "Ibuprofen",
+            "genericName": "Ibuprofen",
+            "class": "NSAID",
+            "uses": [
+                "Pain relief",
+                "Fever reduction",
+                "Inflammation reduction",
+                "Menstrual cramps"
+            ],
+            "commonDoses": [
+                "200mg",
+                "400mg",
+                "600mg",
+                "800mg"
+            ],
+            "sideEffects": [
+                "Stomach pain",
+                "Nausea",
+                "Dizziness",
+                "Headache",
+                "Increased blood pressure"
+            ],
+            "warnings": [
+                "May increase heart attack and stroke risk",
+                "Can cause stomach bleeding",
+                "Avoid with kidney disease"
+            ],
+            "foodInteractions": [
+                "Take with food or milk to reduce stomach upset"
+            ]
+        },
+        {
+            "name": "Acetaminophen",
+            "genericName": "Acetaminophen (Paracetamol)",
+            "class": "Analgesic / Antipyretic",
+            "uses": [
+                "Pain relief",
+                "Fever reduction"
+            ],
+            "commonDoses": [
+                "325mg",
+                "500mg",
+                "650mg"
+            ],
+            "sideEffects": [
+                "Rare at normal doses",
+                "Liver damage with overdose"
+            ],
+            "warnings": [
+                "Do not exceed 4000mg per day (3000mg for chronic use)",
+                "Avoid alcohol (liver toxicity risk)",
+                "Check other medications for acetaminophen content"
+            ],
+            "foodInteractions": [
+                "Can be taken with or without food"
+            ]
+        },
+        {
+            "name": "Metformin",
+            "genericName": "Metformin Hydrochloride",
+            "class": "Biguanide (Antidiabetic)",
+            "uses": [
+                "Type 2 diabetes management",
+                "Polycystic ovary syndrome (PCOS)",
+                "Prediabetes"
+            ],
+            "commonDoses": [
+                "500mg",
+                "850mg",
+                "1000mg"
+            ],
+            "sideEffects": [
+                "Nausea",
+                "Diarrhea",
+                "Stomach upset",
+                "Metallic taste",
+                "Vitamin B12 deficiency (long-term)"
+            ],
+            "warnings": [
+                "Risk of lactic acidosis (rare but serious)",
+                "Avoid with severe kidney disease",
+                "Stop before surgery or imaging with contrast dye"
+            ],
+            "foodInteractions": [
+                "Take with meals to reduce GI side effects"
+            ]
+        },
+        {
+            "name": "Amoxicillin",
+            "genericName": "Amoxicillin",
+            "class": "Penicillin Antibiotic",
+            "uses": [
+                "Bacterial infections (ear, throat, lung, skin, urinary tract)",
+                "H. pylori infection (with other medications)"
+            ],
+            "commonDoses": [
+                "250mg",
+                "500mg",
+                "875mg"
+            ],
+            "sideEffects": [
+                "Diarrhea",
+                "Nausea",
+                "Vomiting",
+                "Rash",
+                "Yeast infections"
+            ],
+            "warnings": [
+                "Do not use if allergic to penicillin",
+                "Complete full course even if feeling better",
+                "May reduce effectiveness of birth control pills"
+            ],
+            "foodInteractions": [
+                "Can be taken with or without food"
+            ]
+        },
+        {
+            "name": "Lisinopril",
+            "genericName": "Lisinopril",
+            "class": "ACE Inhibitor",
+            "uses": [
+                "High blood pressure",
+                "Heart failure",
+                "Post-heart attack recovery",
+                "Kidney protection in diabetes"
+            ],
+            "commonDoses": [
+                "2.5mg",
+                "5mg",
+                "10mg",
+                "20mg",
+                "40mg"
+            ],
+            "sideEffects": [
+                "Dry cough",
+                "Dizziness",
+                "Headache",
+                "Fatigue",
+                "Elevated potassium"
+            ],
+            "warnings": [
+                "Do not use during pregnancy (can harm fetus)",
+                "Monitor kidney function and potassium levels",
+                "May cause angioedema (rare but serious)"
+            ],
+            "foodInteractions": [
+                "Can be taken with or without food"
+            ]
+        },
+        {
+            "name": "Atorvastatin",
+            "genericName": "Atorvastatin Calcium",
+            "class": "Statin (HMG-CoA Reductase Inhibitor)",
+            "uses": [
+                "High cholesterol",
+                "Cardiovascular disease prevention",
+                "Reduce heart attack and stroke risk"
+            ],
+            "commonDoses": [
+                "10mg",
+                "20mg",
+                "40mg",
+                "80mg"
+            ],
+            "sideEffects": [
+                "Muscle pain",
+                "Headache",
+                "Nausea",
+                "Elevated liver enzymes",
+                "Increased blood sugar"
+            ],
+            "warnings": [
+                "Avoid during pregnancy and breastfeeding",
+                "Report unexplained muscle pain immediately",
+                "Regular liver function tests recommended"
+            ],
+            "foodInteractions": [
+                "Avoid grapefruit juice (increases drug levels)"
+            ]
+        },
+        {
+            "name": "Omeprazole",
+            "genericName": "Omeprazole",
+            "class": "Proton Pump Inhibitor (PPI)",
+            "uses": [
+                "Acid reflux (GERD)",
+                "Heartburn",
+                "Stomach ulcers",
+                "Erosive esophagitis"
+            ],
+            "commonDoses": [
+                "10mg",
+                "20mg",
+                "40mg"
+            ],
+            "sideEffects": [
+                "Headache",
+                "Nausea",
+                "Diarrhea",
+                "Stomach pain",
+                "Vitamin B12 deficiency (long-term)"
+            ],
+            "warnings": [
+                "Long-term use may increase fracture risk",
+                "May mask symptoms of stomach cancer",
+                "Increased risk of C. difficile infection"
+            ],
+            "foodInteractions": [
+                "Take 30-60 minutes before meals"
+            ]
+        },
+        {
+            "name": "Levothyroxine",
+            "genericName": "Levothyroxine Sodium",
+            "class": "Thyroid Hormone",
+            "uses": [
+                "Hypothyroidism",
+                "Thyroid cancer suppression"
+            ],
+            "commonDoses": [
+                "25mcg",
+                "50mcg",
+                "75mcg",
+                "100mcg",
+                "125mcg"
+            ],
+            "sideEffects": [
+                "Hair loss (temporary)",
+                "Weight changes",
+                "Tremor",
+                "Palpitations (if dose too high)"
+            ],
+            "warnings": [
+                "Take consistently at the same time daily",
+                "Regular TSH monitoring required",
+                "Many drug and food interactions"
+            ],
+            "foodInteractions": [
+                "Take on empty stomach 30-60 minutes before breakfast",
+                "Avoid calcium and iron supplements within 4 hours",
+                "Avoid soy products within several hours"
+            ]
+        },
+        {
+            "name": "Metoprolol",
+            "genericName": "Metoprolol Succinate/Tartrate",
+            "class": "Beta-Blocker",
+            "uses": [
+                "High blood pressure",
+                "Angina",
+                "Heart failure",
+                "Post-heart attack",
+                "Migraine prevention"
+            ],
+            "commonDoses": [
+                "25mg",
+                "50mg",
+                "100mg",
+                "200mg"
+            ],
+            "sideEffects": [
+                "Fatigue",
+                "Dizziness",
+                "Slow heart rate",
+                "Cold hands/feet",
+                "Shortness of breath"
+            ],
+            "warnings": [
+                "Do not stop suddenly (may worsen heart condition)",
+                "May mask low blood sugar symptoms in diabetics",
+                "Use caution with asthma or COPD"
+            ],
+            "foodInteractions": [
+                "Extended-release: take with or after food"
+            ]
+        },
+        {
+            "name": "Amlodipine",
+            "genericName": "Amlodipine Besylate",
+            "class": "Calcium Channel Blocker",
+            "uses": [
+                "High blood pressure",
+                "Angina (chest pain)",
+                "Coronary artery disease"
+            ],
+            "commonDoses": [
+                "2.5mg",
+                "5mg",
+                "10mg"
+            ],
+            "sideEffects": [
+                "Swelling in ankles/feet",
+                "Dizziness",
+                "Flushing",
+                "Headache",
+                "Fatigue"
+            ],
+            "warnings": [
+                "May cause severe low blood pressure",
+                "Use caution with liver disease",
+                "Report severe dizziness or fainting"
+            ],
+            "foodInteractions": [
+                "Avoid grapefruit juice (increases drug levels)"
+            ]
+        },
+        {
+            "name": "Gabapentin",
+            "genericName": "Gabapentin",
+            "class": "Anticonvulsant / Neuropathic Pain Agent",
+            "uses": [
+                "Nerve pain (neuropathy)",
+                "Seizures",
+                "Postherpetic neuralgia",
+                "Restless leg syndrome"
+            ],
+            "commonDoses": [
+                "100mg",
+                "300mg",
+                "400mg",
+                "600mg",
+                "800mg"
+            ],
+            "sideEffects": [
+                "Dizziness",
+                "Drowsiness",
+                "Fatigue",
+                "Coordination problems",
+                "Weight gain"
+            ],
+            "warnings": [
+                "May cause respiratory depression with opioids",
+                "Do not stop suddenly (seizure risk)",
+                "Avoid driving until you know how it affects you"
+            ],
+            "foodInteractions": [
+                "Can be taken with or without food"
+            ]
+        },
+        {
+            "name": "Hydrochlorothiazide",
+            "genericName": "Hydrochlorothiazide",
+            "class": "Thiazide Diuretic",
+            "uses": [
+                "High blood pressure",
+                "Fluid retention (edema)",
+                "Kidney stones prevention"
+            ],
+            "commonDoses": [
+                "12.5mg",
+                "25mg",
+                "50mg"
+            ],
+            "sideEffects": [
+                "Frequent urination",
+                "Dizziness",
+                "Muscle cramps",
+                "Low potassium",
+                "Increased blood sugar"
+            ],
+            "warnings": [
+                "Monitor potassium levels",
+                "May worsen gout",
+                "Increases sun sensitivity",
+                "May affect diabetes control"
+            ],
+            "foodInteractions": [
+                "Take in morning to avoid nighttime urination"
+            ]
+        },
+        {
+            "name": "Sertraline",
+            "genericName": "Sertraline Hydrochloride",
+            "class": "SSRI (Selective Serotonin Reuptake Inhibitor)",
+            "uses": [
+                "Depression",
+                "Anxiety disorders",
+                "OCD",
+                "PTSD",
+                "Panic disorder",
+                "Social anxiety"
+            ],
+            "commonDoses": [
+                "25mg",
+                "50mg",
+                "100mg",
+                "150mg",
+                "200mg"
+            ],
+            "sideEffects": [
+                "Nausea",
+                "Diarrhea",
+                "Insomnia",
+                "Drowsiness",
+                "Sexual dysfunction",
+                "Weight changes"
+            ],
+            "warnings": [
+                "Increased suicide risk in young adults initially",
+                "Do not stop suddenly (withdrawal symptoms)",
+                "Serotonin syndrome risk with other serotonergic drugs",
+                "May increase bleeding risk"
+            ],
+            "foodInteractions": [
+                "Can be taken with or without food"
+            ]
+        }
+    ],
+    "resources": [
+        {
+            "name": "FDA Drug Information",
+            "url": "https://www.fda.gov/drugs",
+            "description": "Official FDA drug safety information and approvals"
+        },
+        {
+            "name": "NIH MedlinePlus",
+            "url": "https://medlineplus.gov/druginformation.html",
+            "description": "Comprehensive drug information from the National Library of Medicine"
+        },
+        {
+            "name": "Drugs.com Interaction Checker",
+            "url": "https://www.drugs.com/drug_interactions.html",
+            "description": "Check interactions between multiple medications"
+        },
+        {
+            "name": "RxList Drug Index",
+            "url": "https://www.rxlist.com/drugs/alpha_a.htm",
+            "description": "Detailed drug monographs and patient information"
+        }
+    ]
+}

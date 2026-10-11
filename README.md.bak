@@ -1,0 +1,73 @@
+# Medicine AI System
+
+An AI-powered medicine identification and drug interaction checking platform. Users can upload an image of a pill to identify it and verify potential drug-drug interactions among their medications.
+
+## Features
+- Pill image upload & preprocessing
+- (Placeholder) Pill identification model inference
+- Medication catalog & sample interaction checking
+- REST-style Flask routes with HTML templates
+- Modular architecture for future expansion (training, retraining, evaluation)
+
+## Project Structure
+```
+medicine_ai_system/
+  src/
+    app.py                # Flask app factory and routes
+    models/               # ML + ORM models
+    utils/                # Helpers: image processing, interactions, database
+    templates/            # Jinja2 HTML templates
+    static/               # CSS/JS/Images
+  data/                   # Raw & processed image data
+  models/trained_models/  # Persisted model artifacts
+  tests/                  # Pytest test suite
+```
+
+## Quick Start
+```powershell
+# (Recommended) Create virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run dev server
+python run.py
+
+# Visit http://localhost:5000
+```
+
+## Training Example
+```powershell
+python train_model.py --epochs 10 --output pill_mobilenetv2.keras
+```
+
+## Configuration
+Environment determined by `FLASK_ENV` and settings in `config.py`. Override values using environment variables:
+- `DATABASE_URL`
+- `SECRET_KEY`
+
+## Testing
+```powershell
+pytest -q
+```
+
+## Notes
+- Dataset structure example (place images under each class):
+```
+data/pills_dataset/
+  aspirin/ img1.jpg ...
+  ibuprofen/ img2.jpg ...
+  acetaminophen/ ...
+  metformin/ ...
+```
+
+- The training script performs a stratified split into train/val/test and saves:
+  - `models/trained_models/pill_mobilenetv2.keras`
+  - `models/trained_models/pill_mobilenetv2_labels.json`
+
+- Replace placeholder logic in `image_processing.py` as needed. The Flask route will automatically use the trained model if present.
+
+## License
+This example scaffold is provided for instructional purposes. Integrate proper licensing and compliance (e.g., HIPAA) before production use.

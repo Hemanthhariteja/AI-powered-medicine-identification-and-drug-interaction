@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row g-4">
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">🔬 Advanced Pill Identification</h5>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <strong>Error!</strong> {{ error }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                {% endif %}
+
+                <div id="pill-dropzone" class="dropzone mb-4">
+                    <div><strong>Drop your pill image here</strong></div>
+                    <small class="text-muted">or click to browse files</small>
+                    <input id="pill-file" type="file" accept="image/*" hidden />
+                </div>
+
+                {% if pill_id %}
+                <div class="prediction-result mb-4">
+                    <h3>{{ pill_id }}</h3>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span>Confidence</span>
+                        <strong>{{ confidence }}</strong>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar" role="progressbar" style="width: {{ confidence }}"
+                            aria-valuenow="{{ confidence.rstrip('%') }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    {% if image_filename %}
+                    <small class="d-block mt-3 opacity-75">📁 {{ image_filename }}</small>
+                    {% endif %}
+                </div>
+                {% if warning %}
+                <div class="alert alert-warning">
+                    <strong>⚠️ Notice:</strong> {{ warning }}
+                </div>
+                {% endif %}
+                {% endif %}
+
+                <form method="post" enctype="multipart/form-data" class="row g-3">
+                    <div class="col-12 col-md-8">
+                        <input class="form-control form-control-lg" type="file" name="pill_image" accept="image/*"
+                            required />
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <button class="btn btn-primary btn-lg w-100" type="submit">
+                            🔍 Identify Pill
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-4">
+        <div class="card mb-3 status-card {% if model_status == 'demo' %}demo{% else %}active{% endif %}">
+            <div class="card-body">
+                {% if model_status == 'demo' %}
+                <h6 class="text-warning mb-3">⚠️ Demo Mode</h6>
+                <p class="small mb-2">Using color-based placeholder predictions.</p>
+                <div class="alert alert-light">
+                    <strong>Train a model:</strong><br>
+                    <code class="d-block mt-2 p-2 bg-dark text-white rounded">python train_model.py --epochs 10</code>
+                </div>
+                {% else %}
+                <h6 class="text-success mb-3">✅ AI Model Active</h6>
+                <p class="small mb-2">Using trained MobileNetV2 deep learning model.</p>
+                <div class="alert alert-success">
+                    <strong>14 medications</strong> can be identified with AI-powered accuracy.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h6 class="mb-0">💡 Best Practices</h6>
+            </div>
+            <div class="card-body">
+                <ul class="mb-0 small">
+                    <li class="mb-2">📸 Use good lighting, avoid shadows</li>
+                    <li class="mb-2">🎯 Center the pill in the frame</li>
+                    <li class="mb-2">🔲 Use a contrasting background</li>
+                    <li class="mb-2">✨ Ensure image is clear and focused</li>
+                    <li>📏 Close-up shots work best</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

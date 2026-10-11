@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">📚 Drug Information Reference</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Comprehensive information about the medications in our database.</p>
+                <div class="mb-3">
+                    <input type="text" id="search-drugs" class="form-control form-control-lg"
+                        placeholder="🔍 Search medications..." />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4" id="drug-cards">
+    {% for med in medications %}
+    <div class="col-12 col-md-6 col-lg-4 drug-card" data-name="{{ med.name.lower() }}">
+        <div class="card h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">💊 {{ med.name }}</h5>
+                <small>{{ med.genericName }}</small>
+            </div>
+            <div class="card-body">
+                <p class="mb-2"><strong>Class:</strong> <span class="badge bg-info">{{ med.class }}</span></p>
+
+                <p class="mb-2"><strong>Common Uses:</strong></p>
+                <ul class="small">
+                    {% for use in med.uses[:3] %}
+                    <li>{{ use }}</li>
+                    {% endfor %}
+                </ul>
+
+                <p class="mb-2"><strong>Common Doses:</strong></p>
+                <p class="small text-muted">{{ med.commonDoses | join(', ') }}</p>
+
+                <button class="btn btn-sm btn-outline-primary w-100" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#details-{{ loop.index }}" aria-expanded="false">
+                    View Details
+                </button>
+
+                <div class="collapse mt-3" id="details-{{ loop.index }}">
+                    <hr>
+                    <p class="mb-2"><strong>⚠️ Common Side Effects:</strong></p>
+                    <ul class="small">
+                        {% for effect in med.sideEffects %}
+                        <li>{{ effect }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <p class="mb-2"><strong>🚨 Warnings:</strong></p>
+                    <ul class="small text-danger">
+                        {% for warning in med.warnings %}
+                        <li>{{ warning }}</li>
+                        {% endfor %}
+                    </ul>
+
+                    <p class="mb-2"><strong>🍽️ Food Interactions:</strong></p>
+                    <ul class="small">
+                        {% for food in med.foodInteractions %}
+                        <li>{{ food }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">🔗 External Resources</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for resource in resources %}
+                    <div class="col-12 col-md-6 mb-3">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ resource.name }}</h6>
+                                <p class="card-text small">{{ resource.description }}</p>
+                                <a href="{{ resource.url }}" target="_blank" class="btn btn-sm btn-primary">
+                                    Visit Site →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Search functionality
+    document.getElementById('search-drugs').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const cards = document.querySelectorAll('.drug-card');
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name');
+            if (name.includes(query)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+<style>
+    .drug-card {
+        transition: transform 0.2s;
+    }
+
+    .drug-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %}
